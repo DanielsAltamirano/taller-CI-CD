@@ -19,10 +19,7 @@ jobs:
 
       - name: Construir app con Node JS
         run: npm install
-        
-      - name: Ejecutar pruebas
-        run: npm test
-        
+
       - name: Revisar si api.js existe 
         run: |
           if [ ! -f "$GITHUB_WORKSPACE/api.js" ]; then
@@ -30,4 +27,6 @@ jobs:
             exit 1
           fi
           echo "El archivo api.js existe. Continuando con el Workflow."
-      
+          
+      - name: Ejecutar pruebas
+        run: npm test
