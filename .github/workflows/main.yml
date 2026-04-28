@@ -20,10 +20,10 @@ jobs:
       - name: Construir app con Node JS
         run: npm install
         
-      - name: Revisar si app.js existe 
+      - name: Revisar si api.js existe 
         run: |
-          if [ ! -f "app.js" ]; then
-            echo "El archivo app.js No existe."
+          if [ ! -f "$GITHUB_WORKSPACE/api.js" ]; then
+            echo "El archivo api.js No existe."
             exit 1
           fi
-          echo "El archivo app.js existe. Continuando con el Workflow."
+          echo "El archivo api.js existe. Continuando con el Workflow."
