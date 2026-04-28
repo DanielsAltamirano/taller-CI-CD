@@ -22,7 +22,7 @@ jobs:
         
       - name: Revisar si app.js existe 
         run: |
-          if [ ! -f "$GITHUB_WORKSPACE/app.js" ]; then
+          if [ ! -f "app.js" ]; then
             echo "El archivo app.js No existe."
             exit 1
           fi
