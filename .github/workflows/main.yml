@@ -1,15 +1,22 @@
-name: Mi primer github action
+name: pipeline para revisar archivo
 
 on:
   push:
     branches: ["main"]
 
 jobs:
-  saludos:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Mostrar mensaje
-        run: echo "Hola, este es mi primer mensaje"
-      - name: Fallo intencionado
-        run: exit 1
+      - name: Chechout del codigo
+        uses: actions/checkout@v4
+
+      - name: Usar Node JS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Construir app con Node JS
+        run: npm install
+        
